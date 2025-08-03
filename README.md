@@ -7,7 +7,7 @@ This is a responsive newsletter sign-up form built as part of a Frontend Mentor 
 
 ## Features
 
-- Fully responsive layout (desktop, tablet, mobile)
+- Responsive design for desktop and mobile
 - Real-time form validation
 - Dynamic success message
 - Clean and accessible UI
