@@ -2,6 +2,9 @@
 
 This is a responsive newsletter sign-up form built as part of a Frontend Mentor challenge. The user can enter their email address, submit the form, and receive a success message. It includes input validation and dynamic UI feedback.
 
+🔗 Live Site: [View Project](https://newsletter-sign-up-form-shodehinde.netlify.app/)
+
+
 ## Features
 
 - Fully responsive layout (desktop, tablet, mobile)
