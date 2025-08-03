@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;400;500;600;700;800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="script.js"></script>
+
+    <title>
+      Frontend Mentor | Newsletter sign-up form with success message
+    </title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+        /*does NOT work on safari(browser)*/
+        scroll-behavior: smooth;
+      }
+      .container {
+        max-width: 60rem;
+        margin: 0 auto;
+        padding: 10rem 5rem;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        background-color: hsl(235, 18%, 26%);
+      }
+      .grid-div {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 4rem;
+        background-color: #fff;
+        padding-top: 4rem;
+        padding-right: 1rem;
+        padding-left: 3rem;
+        padding-bottom: 1rem;
+        border-radius: 12px;
+      }
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.3rem;
+        color: hsl(235, 18%, 26%);
+        margin-top: 1rem;
+      }
+      .join {
+        font-size: 0.9rem;
+        color: #444;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+      }
+      .icon-list {
+        width: 1rem;
+        height: 1rem;
+      }
+      .img-desk {
+        width: 20%;
+      }
+      li {
+        font-size: 0.9rem;
+        color: #444;
+        margin-bottom: 0.8rem;
+      }
+      li:last-child {
+        margin-bottom: 2.2rem;
+      }
+      ul {
+        list-style: none;
+      }
+      span {
+        margin-right: 0.7rem;
+      }
+      label {
+        font-weight: 800;
+        font-size: 0.8rem;
+        /* margin-bottom: 8rem; */
+      }
+      .column {
+        display: flex;
+        flex-direction: column;
+      }
+      input {
+        width: 100%;
+        padding: 0.8rem 2rem;
+        border: 1px solid #bbb;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+        margin-top: 0.5rem;
+      }
+      .btn-sub,
+      .dismiss-btn {
+        padding: 1rem 4.3rem;
+        border: none;
+        font-size: 0.8rem;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        background-color: hsl(234, 29%, 20%);
+        color: #fff;
+      }
+      .img-desk {
+        width: 100%;
+        margin-top: -3rem;
+      }
+      .hidden {
+        display: none;
+      }
+      .success {
+        background-color: white;
+        padding: 4rem;
+        border-radius: 12px;
+        margin-top: 1rem;
+        width: 55%;
+        padding-right: 3rem;
+      }
+      p {
+        color: #444;
+        margin-bottom: 2rem;
+        line-height: 1.4;
+      }
+      .success-img {
+        width: 2.6rem;
+      }
+      .img {
+        margin-bottom: 1rem;
+      }
+      .error-msg {
+        font-size: 0.7rem;
+        color: red;
+        margin-top: 0.3rem;
+      }
+      .em-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      /* (phones)*/
+      /* BELOW 375px/10*/
+      @media (max-width: 37.5em) {
+        .grid-div {
+          grid-template-columns: 1fr;
+          display: flex;
+          flex-direction: column;
+          /* padding: 0 0 4em 0; */
+          padding: 0;
+          margin: 0;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+
+        .reg {
+          order: 2;
+        }
+        .img-div {
+          order: 1;
+        }
+
+        .container {
+          max-width: 100%;
+          padding: 2rem;
+          overflow-x: hidden;
+          width: 100vw;
+          box-sizing: border-box;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          min-height: 100vh;
+        }
+        .success {
+          margin-top: 0;
+          width: 100%;
+          padding: 0;
+        }
+
+        .grid-div.hidden {
+          display: none !important;
+        }
+
+        .success.hidden {
+          display: none !important;
+        }
+
+        html,
+        body {
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
+          background: none;
+          margin: 0;
+          padding: 0;
+        }
+        h1 {
+          font-size: 3.5rem;
+          margin-top: 2rem;
+        }
+        .join {
+          font-size: 1.3rem;
+          margin-top: 2rem;
+        }
+        .icon-list {
+          width: 2rem;
+          height: 2rem;
+        }
+        li {
+          font-size: 1.4rem;
+          margin-bottom: 1.7rem;
+        }
+        span {
+          margin-right: 2rem;
+        }
+        label {
+          font-weight: 600;
+          font-size: 1.2rem;
+          margin-top: 2rem;
+        }
+        input {
+          width: 100%;
+          padding: 2rem 2rem;
+          margin-bottom: 2rem;
+          margin-top: 1rem;
+          border-radius: 9px;
+        }
+        input::placeholder {
+          font-size: 1.5rem;
+        }
+        .btn-sub {
+          width: 100%;
+          padding: 2rem 2rem;
+          border: none;
+          font-size: 1.3rem;
+        }
+
+        h1 {
+          margin-top: 2rem;
+        }
+        .dismiss-btn {
+          width: 100%;
+          padding: 1.6rem 4rem;
+          margin-top: 12rem;
+          font-size: 1.4rem;
+        }
+        .success-img {
+          width: 6rem;
+        }
+        p {
+          font-size: 1.4rem;
+        }
+        .error-msg {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sign-up form start -->
+    <div class="container">
+      <div class="grid-div">
+        <div class="reg">
+          <h1>Stay updated!</h1>
+          <p class="join">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul>
+            <li>
+              <span
+                ><img
+                  class="icon-list"
+                  src="assets/images/icon-list.svg"
+                  alt="icon-list"
+              /></span>
+              Product discovery and building what matters
+            </li>
+            <li>
+              <span
+                ><img
+                  class="icon-list"
+                  src="assets/images/icon-list.svg"
+                  alt="icon-list" /></span
+              >Measuring to ensure updates are a success
+            </li>
+            <li>
+              <span
+                ><img
+                  class="icon-list"
+                  src="assets/images/icon-list.svg"
+                  alt="icon-list"
+              /></span>
+              And much more!
+            </li>
+          </ul>
+          <!-- for and id to be the same - screenreader -->
+          <!-- use flex-direction for space for label and input -->
+          <form class="form">
+            <div class="column">
+              <div class="em-flex">
+                <label for="email">Email address</label>
+                <span class="error-msg"></span>
+              </div>
+
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="email@company.com"
+              />
+            </div>
+
+            <button class="btn-sub">Subscribe to monthly newsletter</button>
+          </form>
+        </div>
+
+        <div class="img-div">
+          <img
+            src="assets/images/illustration-sign-up-desktop.svg"
+            class="img-desk"
+            alt="desktop-img"
+          />
+        </div>
+      </div>
+      <div class="success hidden">
+        <div class="img">
+          <img
+            class="success-img"
+            src="assets/images/icon-list.svg"
+            alt="success"
+          />
+        </div>
+        <h1>Thanks for subscribing!</h1>
+        <p>
+          A confirmation email has been sent to
+          <strong id="user-email">you@example.com</strong>. Please open it and
+          click the button inside to confirm your subscription.
+        </p>
+        <button class="dismiss-btn">Dismiss message</button>
+      </div>
+    </div>
+
+    <!-- Sign-up form end -->
+
+    <!-- Success message start -->
+
+    <!-- Success message end -->
+  </body>
+</html>
